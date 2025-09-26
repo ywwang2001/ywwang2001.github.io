@@ -16,7 +16,40 @@
             font-size: 18px;
         }
         h1 { font-size: 2.5em; margin: 0 0 15px 0; font-weight: normal; color: #fff; }
-        h2 { font-size: 1.4em; margin: 35px 0 15px 0; font-weight: normal; color: #fff; }
+        h2 { 
+            font-size: 1.4em; 
+            margin: 35px 0 15px 0; 
+            font-weight: normal; 
+            color: #fff;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 5px;
+        }
+        h2::after {
+            content: '[−]';
+            font-size: 0.8em;
+            color: #4a9eff;
+            font-family: monospace;
+        }
+        h2.collapsed::after {
+            content: '[+]';
+        }
+        .section-content {
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            max-height: 5000px;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            padding-left: 20px;
+            margin-left: 5px;
+        }
+        .section-content.collapsed {
+            max-height: 0;
+            padding-left: 20px;
+        }
         a { color: #4a9eff; text-decoration: none; }
         a:hover { text-decoration: underline; }
         .quote { font-style: italic; color: #aaa; margin-bottom: 40px; }
@@ -26,64 +59,102 @@
     <h1>Yuwen Wang</h1>
     <div class="quote">The oak tree in the courtyard has watched 20 buildings rise and fall around it.</div>
 
-    <h2>About</h2>
-    <p>Thanks for stopping by. I was one of those kids in middle school in Shanghai who couldn't sit still, constantly getting called to the principal's office for disrupting class or running little side hustles. I remember selling jailbroken iPhone apps to classmates, making more money than I probably should have. When I was fifteen, my parents decided I needed a change of scenery and shipped me off to this tiny Adventist academy tucked away in the suburbs outside Denver.</p>
-    
-    <p>High school was like landing on a different planet. Picture this overweight Chinese kid who learned English from textbooks, suddenly dropped into a school where everyone knew each other since kindergarten and youth group was the main social event. I spent that first year mostly confused and homesick. But something shifted in my junior year - I got serious about basketball and soccer, not because I had any natural talent, but because I needed to prove to myself I could transform. Spent hours and hours running after school, eating loads of Jimmy John's sandwich with no sauce added, I lost about sixty pounds within a year. I started actually paying attention in classes, running for student government treasurer as I developed an interest in finance.</p>
-   
-    <p>College was where I discovered I could lose money faster than I ever imagined. Right after turning eighteen, I opened my first investment account and bought some Macy's stock because I liked their dividend yield. Then Bitcoin started exploding and I got completely hooked. Back then, brokerage platforms only gave you charts with no news feeds, so I'd literally spend entire days staring at price movements, trying to decode patterns that didn't exist. Started watching YouTube trading gurus who made it look easy and convinced myself this could actually become a career.</p>
+    <h2 onclick="toggleSection(this)">Early Life</h2>
+    <div class="section-content">
+        <p>Thanks for stopping by. I was one of those kids in middle school in Shanghai who couldn't sit still, constantly getting called to the principal's office for disrupting class or running little side hustles. I remember selling jailbroken iPhone apps to classmates, making more money than I probably should have. When I was fifteen, my parents decided I needed a change of scenery and shipped me off to this tiny Adventist academy tucked away in the suburbs outside Denver.</p>
+        
+        <p>High school was like landing on a different planet. Picture this overweight Chinese kid who learned English from textbooks, suddenly dropped into a school where everyone knew each other since kindergarten and youth group was the main social event. I spent that first year mostly confused and homesick. But something shifted in my junior year - I got serious about basketball and soccer, not because I had any natural talent, but because I needed to prove to myself I could transform. Spent hours and hours running after school, eating loads of Jimmy John's sandwich with no sauce added, I lost about sixty pounds within a year. I started actually paying attention in classes, running for student government treasurer as I developed an interest in finance.</p>
 
-    <p>Got accounts on Binance and FTX, found myself checking Bitcoin prices on my phone while walking to class, during lectures, basically every free moment I had. Then one random Tuesday my account got completely wiped out - no major news, no obvious reason, just got too aggressive with leverage and the market did a whipsaw. That should have been my wake-up call, but instead I discovered futures and options trading. Thought I could make back my losses faster with /ES contracts and 0DTE options. Accounts got wiped out even quicker that way - turns out adding time decay and complexity to an already losing strategy doesn't improve the results.</p>
+        <p>College was where I discovered I could lose money faster than I ever imagined. Right after turning eighteen, I opened my first investment account and bought some Macy's stock because I liked their dividend yield. Then Bitcoin started exploding and I got completely hooked. Back then, brokerage platforms only gave you charts with no news feeds, so I'd literally spend entire days staring at price movements, trying to decode patterns that didn't exist. Started watching YouTube trading gurus who made it look easy and convinced myself this could actually become a career.</p>
 
-    <p>Junior year forced a reckoning I wasn't ready for. I downloaded this book called "Optimal Mean Reversion Trading" and when I opened it, felt like I was reading something written by aliens. Page after page of mathematical equations that might as well have been hieroglyphics. But I had this subconscious feeling that maybe this was the secret sauce, that understanding this level of mathematics was what separated actual traders from gamblers like me. My parents thought I'd lost my mind when I added a mathematics minor halfway through college, but I knew my foundation was too shaky for what I was trying to accomplish. Started working through discrete mathematics textbooks in the library, slowly filling in gaps that should have been covered years earlier.</p>
-    
-    <p>Graduate school helped things gradually sort themselves out. Watching classmates compete for the same finance internships made me realize how saturated that path had become. As someone who's always been more comfortable thinking through problems alone than networking at career fairs, the emergence of LLMs was a game-changer for me. I'd spend hours in late-night conversations with LLMs, bouncing ideas around about different career paths, industry trends, anything really. During one of these sessions - probably my one-hundreth hour of rambling about what to do with my life - skilled trades came up as a topic. Started digging into electrician wages, job market data, the whole industry structure. Suddenly the same supply and demand principles I'd learned losing money in trading were showing up everywhere - except this time pointing toward actual opportunity rather than overcrowded markets.</p>
+        <p>Got accounts on Binance and FTX, found myself checking Bitcoin prices on my phone while walking to class, during lectures, basically every free moment I had. Then one random Tuesday my account got completely wiped out - no major news, no obvious reason, just got too aggressive with leverage and the market did a whipsaw. That should have been my wake-up call, but instead I discovered futures and options trading. Thought I could make back my losses faster with /ES contracts and 0DTE options. Accounts got wiped out even quicker that way - turns out adding time decay and complexity to an already losing strategy doesn't improve the results.</p>
 
-    <p>Now I'm pursuing what most people consider a strange combination. Sleep-in in the morning, math and data science in the afternoon, and electrical in the evening. Working toward journeyman license to run electrical contracting while keeping the technical and analytical work going. The trading taught me to respect uncertainty, the math study taught me to quantify it, and the electrical work is teaching me to build systems that function reliably when someone needs them to work. Still figuring out how all these pieces fit together, but that's part of what makes it interesting.</p>
+        <p>Junior year forced a reckoning I wasn't ready for. I downloaded this book called "Optimal Mean Reversion Trading" and when I opened it, felt like I was reading something written by aliens. Page after page of mathematical equations that might as well have been hieroglyphics. But I had this subconscious feeling that maybe this was the secret sauce, that understanding this level of mathematics was what separated actual traders from gamblers like me. My parents thought I'd lost my mind when I added a mathematics minor halfway through college, but I knew my foundation was too shaky for what I was trying to accomplish. Started working through discrete mathematics textbooks in the library, slowly filling in gaps that should have been covered years earlier.</p>
+        
+        <p>Graduate school helped things gradually sort themselves out. Watching classmates compete for the same finance internships made me realize how saturated that path had become. As someone who's always been more comfortable thinking through problems alone than networking at career fairs, the emergence of LLMs was a game-changer for me. I'd spend hours in late-night conversations with LLMs, bouncing ideas around about different career paths, industry trends, anything really. During one of these sessions - probably my one-hundreth hour of rambling about what to do with my life - skilled trades came up as a topic. Started digging into electrician wages, job market data, the whole industry structure. Suddenly the same supply and demand principles I'd learned losing money in trading were showing up everywhere - except this time pointing toward actual opportunity rather than overcrowded markets.</p>
+    </div>
 
-    <h2>Experience</h2>
-    <p>Jul 2023 - Aug 2023 | Audit Intern | PwC | Shanghai, China<br>
-    • Audited and organized client's financial documents using Excel.<br>
-    • Communicated with clients to assess risk and verified financial accuracy.<br><br>
-    
-    Sep 2022 - Dec 2022 | Food Service Worker | Boston University | Boston, MA<br>
-    • Served over 300 students daily at Warren Tower cafeteria, assisting chefs with meal preparation and inventory management<br>
-    • Ensured hygiene standards by cleaning and sanitizing kitchen stations<br><br>
-    
-    Jul 2019 - Dec 2019 | Marketing Intern | Skyworks Global | Salt Lake City, UT<br>
-    • Conducted research on autogyro R&amp;D, competitors, and helicopter market in China.<br>
-    • Translated technical brochures from English to Chinese<br><br>
-    
-    May 2018 - June 2018 | Business Analyst Intern | Vanke | Shenzhen, China<br>
-    • Assisted in A/B testing of UI updates and collaborated with UX designers and product managers.<br>
-    • Presented data-driven insights to supervisors</p>
-    
-    <h2>Education</h2>
-    <p>Electrical | Apex Technical School | New York, NY<br>
-    • Electrical theory, motor controls, power distribution<br><br>
+    <h2 onclick="toggleSection(this)">Career</h2>
+    <div class="section-content">
+        <p>Now I'm pursuing what most people consider a strange combination. Sleep-in in the morning, math and data science in the afternoon, and electrical in the evening. Working toward journeyman license to run electrical contracting while keeping the technical and analytical work going. The trading taught me to respect uncertainty, the math study taught me to quantify it, and the electrical work is teaching me to build systems that function reliably when someone needs them to work. Still figuring out how all these pieces fit together, but that's part of what makes it interesting.</p>
+    </div>
 
-    MS in Applied Analytics | Columbia | New York, NY<br>
-    • Machine Learning: supervised, unsupervised<br>
-    • Business: operation management, data science consulting, negotiation<br><br>
+    <h2 onclick="toggleSection(this)">Projects</h2>
+    <div class="section-content">
+        <p><a href="https://woodland-horse-analytics.github.io/flash-anzan">Flash Anzan Mental Math Trainer</a><br>
+        • Web application that flashes numbers for users to add them up mentally<br>
+        
+    </div>
     
-    BA in Economics with Minor in Mathematics | Boston University | Boston, MA<br>
-    • Economics: empirical, public, law, anti-trust, monetary &amp; banking<br>
-    • Mathematic: vector calculus, linear algebra, differential equation, probabilities</p>
+    <h2 onclick="toggleSection(this)">Experience</h2>
+    <div class="section-content">
+        <p>Jul 2023 - Aug 2023 | Audit Intern | PwC | Shanghai, China<br>
+        • Audited and organized client's financial documents using Excel.<br>
+        • Communicated with clients to assess risk and verified financial accuracy.<br><br>
+        
+        Sep 2022 - Dec 2022 | Food Service Worker | Boston University | Boston, MA<br>
+        • Served over 300 students daily at Warren Tower cafeteria, assisting chefs with meal preparation and inventory management<br>
+        • Ensured hygiene standards by cleaning and sanitizing kitchen stations<br><br>
+        
+        Jul 2019 - Dec 2019 | Marketing Intern | Skyworks Global | Salt Lake City, UT<br>
+        • Conducted research on autogyro R&amp;D, competitors, and helicopter market in China.<br>
+        • Translated technical brochures from English to Chinese<br><br>
+        
+        May 2018 - June 2018 | Business Analyst Intern | Vanke | Shenzhen, China<br>
+        • Assisted in A/B testing of UI updates and collaborated with UX designers and product managers.<br>
+        • Presented data-driven insights to supervisors</p>
+    </div>
     
-    <h2>Reading</h2>
-    <p>Rosen - Discrete Mathematics<br>
-    Apostol - Calculus Vol 1 and Vol 2<br>
-    Casella &amp; Berger - Statistical Inference<br>
-    Halliday &amp; Resnick - Fundamentals of Physics Vol 1 and Vol 2<br>
-    Ilmanen - Expected Returns<br>
-    Brueggeman &amp; Fisher - Real Estate Finance and Investments</p>
+    <h2 onclick="toggleSection(this)">Education</h2>
+    <div class="section-content">
+        <p>Electrical | Apex Technical School | New York, NY<br>
+        • Electrical theory, motor controls, power distribution<br><br>
+
+        MS in Applied Analytics | Columbia | New York, NY<br>
+        • Machine Learning: supervised, unsupervised<br>
+        • Business: operation management, data science consulting, negotiation<br><br>
+        
+        BA in Economics with Minor in Mathematics | Boston University | Boston, MA<br>
+        • Economics: empirical, public, law, anti-trust, monetary &amp; banking<br>
+        • Mathematic: vector calculus, linear algebra, differential equation, probabilities</p>
+    </div>
+    
+    <h2 onclick="toggleSection(this)">Reading</h2>
+    <div class="section-content">
+        <p>Rosen - Discrete Mathematics<br>
+        Apostol - Calculus Vol 1 and Vol 2<br>
+        Casella &amp; Berger - Statistical Inference<br>
+        Halliday &amp; Resnick - Fundamentals of Physics Vol 1 and Vol 2<br>
+        Ilmanen - Expected Returns<br>
+        Brueggeman &amp; Fisher - Real Estate Finance and Investments</p>
+    </div>
 
     <p style="margin-top: 50px; border-top: 1px solid #333; padding-top: 20px;">
         <a href="https://github.com/ywwang2001">GitHub</a> •
+	<a href="https://youtube.com/@ywwang2001">YouTube</a> •
         <a href="https://linkedin.com/in/yw3413">LinkedIn</a> •
         <a href="https://x.com/ywwang2001">X</a> •
         <a href="https://www.facebook.com/yuwen.wang.738452">Facebook</a> •
         <a href="yw3413@columbia.edu">Email</a>
     </p>
+
+    <script>
+        // Initialize all sections as collapsed on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section-content');
+            const headers = document.querySelectorAll('h2');
+            
+            sections.forEach((section, index) => {
+                section.classList.add('collapsed');
+                headers[index].classList.add('collapsed');
+            });
+        });
+        
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            content.classList.toggle('collapsed');
+            header.classList.toggle('collapsed');
+        }
+    </script>
 </body>
 </html>
