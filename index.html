@@ -1,174 +1,125 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yuwen Wang</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            line-height: 1.7;
-            background: #111;
-            color: #ccc;
-            font-size: 18px;
-        }
-        h1 { font-size: 2.5em; margin: 0 0 15px 0; font-weight: normal; color: #fff; }
-        h2 { 
-            font-size: 1.4em; 
-            margin: 35px 0 15px 0; 
-            font-weight: normal; 
-            color: #fff;
-            cursor: pointer;
-            user-select: none;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 5px;
-        }
-        h2::after {
-            content: '[−]';
-            font-size: 0.8em;
-            color: #4a9eff;
-            font-family: monospace;
-        }
-        h2.collapsed::after {
-            content: '[+]';
-        }
-        .section-content {
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            max-height: 5000px;
-            border-left: 1px solid rgba(255, 255, 255, 0.1);
-            padding-left: 20px;
-            margin-left: 5px;
-        }
-        .section-content.collapsed {
-            max-height: 0;
-            padding-left: 20px;
-        }
-        a { color: #4a9eff; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .quote { font-style: italic; color: #aaa; margin-bottom: 40px; }
-    </style>
-</head>
-<body>
-    <h1>Yuwen Wang</h1>
-    <div class="quote">The oak tree in the courtyard has watched 20 buildings rise and fall around it.</div>
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    		<title>Yuwen Wang</title>
+		<style>
+			body {font-family: system-ui, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; background: #111; color: #ccc; line-height: 1.7; font-size: 18px;}
+			h1, h2, h3 { color: #fff; font-weight: normal; margin: 0 0 15px;}
+			h1 {font-size: 2.5em;}
+			h2 {font-size: 1.4em; margin-top: 35px; cursor: pointer; display: flex; justify-content: space-between; border-bottom: 1px solid #222; padding-bottom: 5px; user-select: none;}
+			h2::after { content: '[−]'; color: #4a9eff; font-size: .8em; font-family: monospace; }
+			h2.collapsed::after { content: '[+]';}
+			h3 { font-size: 1.1em; color: #ddd; margin: 15px 0 5px 0; font-weight: normal; text-align: center; }
+			.section-content {overflow: hidden; transition: max-height .3s ease; max-height: 5000px; border-left: 1px solid #222; padding-left: 20px; margin-left: 5px;}
+			.section-content.collapsed {max-height: 0;}
+			a {color: #4a9eff; text-decoration: none;}
+			a:hover {text-decoration: underline;}
+			.quote {font-style: italic; color: #aaa; margin-bottom: 40px;}
+		</style>
+	</head>
+	
+	<body>
+		<h1>Yuwen Wang</h1>
+    		<div class="quote">The oak tree in the courtyard has watched 20 buildings rise and fall around it.</div>
 
-<h2 onclick="toggleSection(this)">Early Years</h2>
-    <div class="section-content">
-       <p style="text-align: center; font-weight: bold;">Middle School</p>
-       <p>I was one of those kids in middle school in Shanghai who couldn't sit still, constantly getting called to the principal's office for disrupting class or running little side hustles. Selling jailbroken iPhone apps to classmates, making more money than I should have. When I was fifteen, my parents decided I needed a change of scenery and shipped me off to a tiny Adventist academy in the suburbs outside Denver.</p>
-        
-       <p style="text-align: center; font-weight: bold;">High School</p>
-       <p>High school was like landing on a different planet. Picture this overweight Chinese kid who learned English from textbooks, suddenly dropped into a school where everyone knew each other since kindergarten and youth group was the main social event. I spent that first year mostly confused and homesick. But something shifted junior year—I got serious about basketball and soccer, not because I had natural talent, but because I discovered I could deliberately reshape myself through sustained effort. I spent hours running after school, eating loads of Jimmy John's sandwiches with no sauce, and lost sixty pounds within a year. I started paying attention in school, running for student government treasurer as I developed an interest in finance.</p>
-        
-       <p style="text-align: center; font-weight: bold;">College</p>
-       <p>College was where I discovered I could make and lose money faster than I ever imagined. Right after turning eighteen, I opened my first investment account and bought Macy's stock because I liked their dividend yield. Then Bitcoin started exploding and I got completely hooked. Back then, brokerage platforms only gave you charts with no news feeds, so I'd spend entire days staring at price movements, trying to decode patterns that didn't exist. Started watching YouTube trading gurus who made it look easy and convinced myself this could become a career. In sophomore year, I got leveraged accounts on crypto exchanges, finding myself checking Bitcoin prices on my phone while walking to class, during lectures, basically every free moment. Then one random Tuesday my account got completely wiped out—no major news, no obvious reason, just got too aggressive with leverage and the market whipsawed. That should have been my wake-up call, but instead I discovered futures and options trading. Thought I could recoup my losses faster with /ES contracts and 0DTE options. Accounts got wiped out even quicker—turns out adding time decay and complexity to an already losing strategy doesn't improve results.</p>
-        
-        <p>The pattern repeated until I found a book called "Optimal Mean Reversion Trading" on one innocuous afternoon in junior year. When I opened it, I felt like reading something written by aliens—page after page of mathematical equations that might as well have been hieroglyphics. But I had this feeling that maybe this was the secret sauce—understanding this level of mathematics would separat actual traders from gamblers. My parents thought that I have lost my mind when I added a mathematics minor halfway through college, but I knew my foundation was too shaky for what I was trying to accomplish. I started working through discrete mathematics textbooks in the library, slowly filling gaps that should have been covered years earlier.</p>
-        
-       <p style="text-align: center; font-weight: bold;">Graduate School</p>
-       <p>Graduate school helped things click into place. Watching classmates compete for the same finance internships made me realize how saturated that path had become. As someone who's always been more comfortable thinking through problems alone than networking at career fairs, the emergence of LLMs was a game-changer. I'd spend hours in late-night conversations with LLMs, bouncing ideas around about career paths and industry trends. During one of these sessions—probably my hundredth hour of rambling about what to do with my life—skilled trades came up.</p> 
+    		<h2 onclick="toggleSection(this)">Early Years</h2>
+    		<div class="section-content">
+			<h3>Middle School</h3>
+    		   	<p>I was one of those kids in middle school in Shanghai who couldn't sit still, constantly getting called to the principal's office for disrupting class or running little side hustles—selling jailbroken iPhone apps to classmates and making more money than 13-year-old should have. When I was 15, my parents decided I needed a change of scenery and shipped me off to a tiny academy in the suburbs outside Denver, CO.</p>
+    		   	 
+    		   	<h3>High School</h3>
+    		   	<p>High school was like landing on a different planet. Picture this overweight Chinese kid who learned English from textbooks, suddenly dropped into a school where everyone knew each other since kindergarten and youth group ran the social scene. I spent that first year mostly confused and homesick. But something shifted junior year—I got serious about basketball and soccer, not because I had natural talent, but because I needed to prove that I can reshape myself through sustained effort. I spent hours running after school, eating tons of Jimmy John's sandwiches with no sauce, and lost 30 kilograms within a year. I started paying attention in school, running for student government treasurer as I developed an interest in finance.</p>
+    		   	 
+    		   	<h3>College</h3>
+    		   	<p>College was where I discovered how fast money can be made—and lost. The following was a progression of discoveries after I rushed to open my first investment account at 18.</p>
+    		   	<ol style="margin-left: 2em;">
+    		   	        <li><b>Dividends</b>: my first discovery—bought Macy’s stock and learned I could get paid simply for holding shares.</li>
+    		   	        <li><b>Crypto</b>: sold the “boring” dividend stocks, convinced Bitcoin moved faster and promised more.</li>
+    		   	        <li><b>Trading</b>: grew tired of waiting, watched YouTube gurus preach technical analysis, and spent entire days staring at price movements, searching for patterns that didn’t exist.</li>
+    		   	        <li><b>Leverage</b>: my biggest discovery—felt like pulling money out of thin air, a thrill I still remember. I traded with 10x as standard, sometimes 20x, until a minor market whipsaw wiped out my account on a random Tuesday. I was traveling that night with a packed itinerary—the entire trip just froze the moment I received the margin call. I didn't bother going to the hotel—just slept in the car.</li>
+    		   	        <li><b>Futures and 0DTE options</b>: discovered a few months later, thought they could get my money back. Not surprisingly, 100x leverage imploded even faster.</li>
+		   	</ol>
 
-       <p>My generations—Gen Z—grew up being almost entire ignorant of trades like electrical, HVAC, and plumbing as viable career paths compared to office jobs. It's understandable since few of our parents could have projected the AI boom and the rapid formation of global talent pools. Even though white-collar markets are still projected to have strong demand, the supply of capable labor—both human and algorithmic—is growing exponentially faster. AI’s learning speed is extraordinary, and I have sufficient reason to believe that it could obliterate a large chunk of entry-level roles before 2040. Unless already mid-level and on track for senior-level by 2040, anyone entering the white-collar market at or slightly before the AI boom will likely have little chance of surpassing AI’s exponential progress. Furthermore, global talent pools across Asia, Eastern Europe, and parts of Africa are expanding rapidly, offering fluent English speakers with comparable skill at a fraction of the cost. Given this trajectory, it’s highly likely that careers in the office economy for U.S. workers will face a structural demand-supply imbalance in the coming decades.</p>
+		   	<p>The pattern repeated until I found a book called "Optimal Mean Reversion Trading" on one innocuous afternoon in junior year. When I opened it, I felt like reading something written by aliens—page after page of mathematical equations that might as well have been hieroglyphics. But I had this feeling that maybe this was the secret sauce—understanding this level of mathematics would separat actual traders from gamblers. My parents thought that I have lost my mind when I added a mathematics minor halfway through college, but I knew my foundation was too shaky for what I was trying to accomplish.</p>
+    		   	 
+    		   	<h3>Graduate School</h3>
+    		   	<p>Graduate school helped things click into place. Watching classmates compete for the same finance internships made me realize how saturated that path had become. As someone who's always been more comfortable thinking through problems alone than networking at career fairs, the emergence of LLMs was a game-changer. I spent months in late-night conversations with LLMs, bouncing ideas around career paths and industry trends. During one session—probably my hundredth hour of rambling about what to do with my life—skilled trades came up.</p>
+		</div>
 
-       <p>Skilled trades would only face real existential risk if fully capable humanoid robots are built. Creating such machines is far more complex than software—requiring breakthroughs in dexterous manipulation, autonomous perception, and safety systems that can operate in unstructured environments. Given the current pace of research, that’s at least 10, if not 20, years away. By then, I would have slipped through the window and became a senior-level electrician, and even if humanoid robots learns exponentially, the skill gap would likely remain permanent.</p>
-    </div>
+		<h2 onclick="toggleSection(this)">Principles</h2>
+    		<div class="section-content">
+    		    <h3>The Axiom</h3>
+    		    <p>People center their lives around money, status, relationships, and experiences—then wonder why satisfaction never lasts. You get the thing, feel good briefly, adapt back to baseline. Psychologists call this hedonic adaptation. I watched this pattern in myself and others enough times to realize something fundamental was wrong with the approach. To think clearly about building a life, I need something foundational I can reason from—in mathematics we call these axioms. Here's mine: happiness comes from within, not from money or status or experiences or any of that. If I seek contentment by acquiring externalities, I've set myself up for a treadmill—brief spikes when I gain them, then adaptation pulls me back down, unhappy most of the time.</p>
+    		    
+    		    <h3>The Implementation</h3>
+    		    <p>How do I find inner peace? The answer starts with a constraint—one cannot build contentment without meeting basic needs. After graduating, I stripped life down to components—food, shelter, financial stability—and optimized each one. I learned to cook meals in batches, skateboarded to work, slept on a shikibuton that retracts during the day, fixed my own things and built my own website (like this one). Now I am building equity through stable work as an electrician while saving aggresively until passive income covers my basic needs. Meanwhile, I am finding inner peace through meditation—only after finding inner contentment may I move on to the next question.</p>
+    		    
+    		    <h3>The Purpose</h3>
+    		    <p>What do I want to do with my life? Everyone has different answers. Here is mine: I want to create value. In capitalism, wealth measures value creation—imperfectly, but reliably enough. My way of building equity is through entrepreneurship and investment, taking calculated risks where exceptional worldview and knowledge create an edge. It doesn't seem obvious, but the most valuable lesson from my trading years wasn’t about emotional control or technical analysis—it was the realization that wealth accumulation and dissipation are explosive in nature. It doesn’t grow linearly with effort but moves in sudden, disproportionate jumps to those who are positioned correctly. That shattered the illusion of linear progress in corporate settings—do X amount of work with Y amount of wage, receive XY amount of pay, repeat. However, within that loop of meetings, reports, and constant motion, little truly compounds. So how One way to Mathematics, by contrast, compounds quietly—each hour of study reinforcing mental frameworks that can generate insights orders of magnitude more valuable than predictable output. One clear, correct idea can outweigh years of incremental busyness.</p>
 
-<h2 onclick="toggleSection(this)">Principles</h2>
-    <div class="section-content">
-        <p style="text-align: center; font-weight: bold;">The Axiom</p>
-	<p>People center their lives around money, status, relationships, and experiences—then wonder why satisfaction never lasts. You get the thing, feel good briefly, adapt back to baseline. Psychologists call this hedonic adaptation. I watched this pattern in myself and others enough times to realize something fundamental was wrong with the approach. To think clearly about building a life, I need something foundational I can reason from—in mathematics we call these axioms. Here's mine: happiness comes from within, not from money or status or experiences or any of that. If I seek contentment by acquiring externalities, I've set myself up for a treadmill—brief spikes when I gain them, then adaptation pulls me back down, unhappy most of the time.</p>
-        
-        <p style="text-align: center; font-weight: bold;">The Implementation</p>
-        <p>How do I find inner peace? The answer starts with a constraint—one cannot build contentment without meeting basic needs. After graduating, I stripped life down to components—food, shelter, financial stability—and optimized each one. I learned to cook meals in batches, skateboarded to work, slept on a shikibuton that retracts during the day, fixed my own things and built my own website (like this one). Now I am building equity through stable work as an electrician while saving aggresively until passive income covers my basic needs. Meanwhile, I am finding inner peace through meditation—only after finding inner contentment may I move on to the next question.</p>
-        
-        <p style="text-align: center; font-weight: bold;">The Purpose</p>
-	<p>What do I want to do with my life? Everyone has different answers. Here is mine: I want to create value. In capitalism, wealth measures value creation—imperfectly, but reliably enough. My way of building equity is through entrepreneurship and investment, taking calculated risks where exceptional worldview and knowledge create an edge. Years of trading taught me something useful. I watched accounts swing from $25,000 to over $250,000 and back to zero within a month, repeatedly. The lesson wasn’t about emotional control or reading charts—it was this: wealth accumulation and dissipation are explosive in nature. Money flows extremely quickly to the right person at the right time—not through luck, but through offering value exactly when the market needs it. Notice that the sequence matters: secure inner happiness first, pursue whatever matters to me second. Reverse it and I’m back on the hedonic treadmill.</p>
+    		    <p>Given that, the logical move was to anchor my life in a profession offering stability without consuming the bandwidth needed for deep, compounding work. Electrical work fits that profile—it provides a solid income under fifty hours a week and embeds physical movement that offsets the costs of sedentary life. The tasks are bounded and concrete: when a circuit fails, you fix it; when it works, the result is immediate. There’s no performative layer of office politics or social signaling—no need to sustain appearances through titles, wardrobes, or status rituals. When the tools go down, the day is done. That simplicity frees a vast reserve of attention for the things that truly compound—study, mathematics, and thought. It’s a clean two-tier structure: a stable foundation below to sustain life, and an expanding cognitive layer above that quietly builds leverage over time.</p>
 
-        <p style="text-align: center; font-weight: bold;">The Strategy</p>
-        <p>How do I create value? I first need to have exceptional understanding of how the world works—not surface patterns but deep structures. I find studying mathematics is the most reliable way to upgrade my cognitive architecture. Not to impress anyone—honestly, studying abstract math creates more social friction than admiration. The point is solely to build pattern recognition on a different scale.</p>
+
+    		    <h3>The Strategy</h3>
+    		    <p>How do I create value? I first need to have exceptional understanding of how the world works—not surface patterns but deep structures. I find studying mathematics is the most reliable way to upgrade my cognitive architecture. Not to impress anyone—honestly, studying abstract math creates more social friction than admiration. The point is solely to build pattern recognition on a different scale.</p>
   
-	<p style="text-align: center; font-weight: bold;">The Counterarguments</p>
-	<p>Why not join the corporate world? From what I've observed, corporations filter people by sunk cost—years in college, internships, interview prep, hundreds of resumes sent. Their training typically optimizes for using existing frameworks and tools, maximizing productivity given predefined objectives, and eventually workers become cogs in a machine. Given my objective of value creation through cognitive upgrades, corporations remain great case studies but flawed laboratories for innovation.</p>
+    		    <h3>The Counterarguments</h3>
+    		    <p>Why not join the corporate world? From what I've observed, corporations filter people by sunk cost—years in college, internships, interview prep, hundreds of resumes sent. Their training typically optimizes for using existing frameworks and tools, maximizing productivity given predefined objectives, and eventually workers become cogs in a machine. Given my objective of value creation through cognitive upgrades, corporations remain great case studies but flawed laboratories for innovation.</p>
 
-	<p>Why not simply hire talents? This is where many get it wrong. Business success foundamentally depends on employee effort. The ideal company has workers putting all-out efforts not because they have to but because it's in their best interest. The worst company has workers quiet quitting and playing politics. What causes the divergence? Leader competence. An incompetent leader can't distinguish good from bad employees. The bad employee optimizes current quarter earnings and KPIs while sacrificing long-term sustainability—moving pieces around without creating value. The good employee builds for long-term prosperity, often with worse KPIs because they're heavily invested in research and development. An incompetent leader often rewards the wrong people. Let's assume the axiom: employees value recognition over compensation. Even well-paid talent leaves when unrecognized. Result: competent leaders attract good employees willing to take less pay to build something meaningful together. Incompetent leaders struggle to acquire talent even with high offers. Who wins?</p>
+    		    <p>Why not simply hire talents? This is where many get it wrong. Business success foundamentally depends on employee effort. The ideal company has workers putting all-out efforts not because they have to but because it's in their best interest. The worst company has workers quiet quitting and playing politics. What causes the divergence? Leader competence. An incompetent leader can't distinguish good from bad employees. The bad employee optimizes current quarter earnings and KPIs while sacrificing long-term sustainability—moving pieces around without creating value. The good employee builds for long-term prosperity, often with worse KPIs because they're heavily invested in research and development. An incompetent leader often rewards the wrong people. Let's assume the axiom: employees value recognition over compensation. Even well-paid talent leaves when unrecognized. Result: competent leaders attract good employees willing to take less pay to build something meaningful together. Incompetent leaders struggle to acquire talent even with high offers. Who wins?</p>
 
-        <p style="text-align: center; font-weight: bold;">The Future</p>
-	<p>I can't specify where I will be taking my business. That's by design—you cannot ask someone who has never run a marathon what they saw while running. But what I do know is: finding inner peace and making mathematics my priority might be the optimal things to do. My generation—Gen Z—stands at a unique inflection point in human history. Over the coming decades, advances in biotechnology—synthetic organs, gene therapies, and cellular regeneration—will likely extend the average human lifespan to 90+ years. Meanwhile, by 2100, neuroscientists may unlock brain-computer interfaces sophisticated enough to transfer human consciousness to non-biological substrates, enabling us to inhabit various physical (humanoid robot) or digital forms indefinitely. I don't think it's science fiction—it's the logical trajectory of exponential progress in fields that are already delivering results. Therefore, this realization has been factored into consideration when writing these principles—making plans for a life of over 100 years instead of 70.</p>
-    </div>
+    		    <h3>The Future</h3>
+    		    <p>I can't specify where I will be taking my business. That's by design—you cannot ask someone who has never run a marathon what they saw while running. But what I do know is: finding inner peace and making mathematics my priority might be the optimal things to do. My generation—Gen Z—stands at a unique inflection point in human history. Over the coming decades, advances in biotechnology—synthetic organs, gene therapies, and cellular regeneration—will likely extend the average human lifespan to 90+ years. Meanwhile, by 2100, neuroscientists may unlock brain-computer interfaces sophisticated enough to transfer human consciousness to non-biological substrates, enabling us to inhabit various physical (humanoid robot) or digital forms indefinitely. I don't think it's science fiction—it's the logical trajectory of exponential progress in fields that are already delivering results. Therefore, this realization has been factored into consideration when writing these principles—making plans for a life of over 100 years instead of 70.</p>
+    		</div>
+    		
+		<h2 onclick="toggleSection(this)">Projects</h2>
+  		<div class="section-content">
+  		  <ul>
+  		    <li><a href="https://woodland-horse-analytics.github.io/flash-anzan">Flash Anzan Mental Math Trainer</a> — Web app that flashes numbers for users to add mentally</li>
+  		    <li><a href="https://woodland-horse-analytics.github.io/binary-voting-machine">Binary Voting Machine</a> — Web app for groups to reach consensus on numerical decisions through voting</li>
+  		  </ul>
+  		</div>
 
+  		<h2 onclick="toggleSection(this)">Education</h2>
+  		<div class="section-content">
+  		  <ul>
+  		    <li><b>Electrical | Apex Technical School | New York, NY</b><br>Electrical theory, motor controls, conduit bending</li>
+  		    <li><b>MS in Applied Analytics | Columbia University | New York, NY</b><br>Business analytics, corporate strategy, negotiation</li>
+  		    <li><b>BA in Economics with Minor in Mathematics | Boston University | Boston, MA</b><br>Economics: empirical, public, law, anti-trust, monetary &amp; banking<br>Mathematics: vector calculus, linear algebra, differential equation, probabilities</li>
+  		  </ul>
+  		</div>
 
-<h2 onclick="toggleSection(this)">Projects</h2>
-    <div class="section-content">
-        <p><a href="https://woodland-horse-analytics.github.io/flash-anzan">Flash Anzan Mental Math Trainer</a><br>
-        • Web application that flashes numbers for users to add them up mentally<br>
-        <br>
-        <a href="https://woodland-horse-analytics.github.io/binary-voting-machine">Binary Voting Machine</a><br>
-        • Web application for groups to reach consensus on numerical decisions through voting<br>
-    </div>    
-    
-<h2 onclick="toggleSection(this)">Education</h2>
-<div class="section-content">
-    <p><strong>Electrical | Apex Technical School | New York, NY</strong><br>
-    • Electrical theory, motor controls, conduit bending<br><br>
-    <strong>MS in Applied Analytics | Columbia University | New York, NY</strong><br>
-    • Business analytics, corporate strategy, negotiation<br><br>
-    <strong>BA in Economics with Minor in Mathematics | Boston University | Boston, MA</strong><br>
-    • Economics: empirical, public, law, anti-trust, monetary &amp; banking<br>
-    • Mathematics: vector calculus, linear algebra, differential equation, probabilities</p>
-</div>
-    
-<h2 onclick="toggleSection(this)">Readings</h2>
-<div class="section-content">
-    <p>
-        • Enderton: <em>Elements of Set Theory</em><br>
-        • Dummit &amp; Foote: <em>Abstract Algebra</em><br>
-        • Axler: <em>Linear Algebra Done Right</em><br>
-        • Rudin: <em>Principles of Mathematical Analysis</em><br>
-        • Munkres: <em>Topology</em><br>
-        • Folland: <em>Real Analysis: Modern Techniques and Their Applications</em><br>
-        • Durrett: <em>Probability: Theory and Examples</em>
-    </p>
-</div>
+  		<h2 onclick="toggleSection(this)">Readings</h2>
+  		<div class="section-content">
+  		  <ul>
+  		    <li>Enderton: <em>Elements of Set Theory</em></li>
+  		    <li>Dummit &amp; Foote: <em>Abstract Algebra</em></li>
+  		    <li>Axler: <em>Linear Algebra Done Right</em></li>
+  		    <li>Rudin: <em>Principles of Mathematical Analysis</em></li>
+  		    <li>Munkres: <em>Topology</em></li>
+  		    <li>Folland: <em>Real Analysis: Modern Techniques and Their Applications</em></li>
+  		    <li>Durrett: <em>Probability: Theory and Examples</em></li>
+  		  </ul>
+  		</div>
 
-<footer style="margin-top: 50px; border-top: 1px solid #333; padding-top: 20px;">
-    <div>
-        <a href="https://github.com/ywwang2001">GitHub</a> •
-        <a href="https://youtube.com/@ywwang2001">YouTube</a> •
-        <a href="https://linkedin.com/in/yw3413">LinkedIn</a> •
-        <a href="https://x.com/ywwang2001">X</a> •
-        <a href="https://www.facebook.com/yuwen.wang.738452">Facebook</a> •
-        <a href="https://calendly.com/yuwenwang05/meeting">Calendly</a> •
-        <a href="mailto:yw3413@columbia.edu">Email</a>
-    </div>
-    <div style="font-size: 12px; color: #666; margin-top: 10px;">
-        © 2025 Yuwen Wang
-    </div>
-</footer>
+  		<footer>
+  		  <div>
+  		    <a href="https://github.com/ywwang2001">GitHub</a> |
+  		    <a href="https://youtube.com/@ywwang2001">YouTube</a> |
+  		    <a href="https://linkedin.com/in/yw3413">LinkedIn</a> |
+		    <a href="https://x.com/ywwang2001">X</a> |
+  		    <a href="https://www.facebook.com/yuwen.wang.738452">Facebook</a> |
+  		    <a href="https://calendly.com/yuwenwang05/meeting">Calendly</a> |
+  		    <a href="mailto:yw3413@columbia.edu">Email</a>
+  		  </div>
+  		  <div>© 2025 Yuwen Wang</div>
+  		</footer>
 
-    <script>
-        // Initialize all sections as collapsed on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const sections = document.querySelectorAll('.section-content');
-            const headers = document.querySelectorAll('h2');
-            
-            sections.forEach((section, index) => {
-                section.classList.add('collapsed');
-                headers[index].classList.add('collapsed');
-            });
-        });
-        
-        function toggleSection(header) {
-            const content = header.nextElementSibling;
-            content.classList.toggle('collapsed');
-            header.classList.toggle('collapsed');
-        }
-    </script>
-</body>
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {const sections = document.querySelectorAll('.section-content'); const headers = document.querySelectorAll('h2'); sections.forEach((section, index) => {section.classList.add('collapsed'); headers[index].classList.add('collapsed'); }); });
+			function toggleSection(header) {const content = header.nextElementSibling; content.classList.toggle('collapsed'); header.classList.toggle('collapsed');}
+  		</script>
+	</body>
 </html>
